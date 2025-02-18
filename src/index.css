@@ -1,0 +1,255 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.montserrat-alternates-thin {
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+  }
+  
+  .montserrat-alternates-extralight {
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+  }
+  
+  .montserrat-alternates-light {
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  .montserrat-alternates-regular {
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .montserrat-alternates-medium {
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  .montserrat-alternates-semibold {
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+  }
+  
+  .montserrat-alternates-bold {
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .montserrat-alternates-extrabold {
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+  }
+  
+  .montserrat-alternates-black {
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+  }
+  
+  .montserrat-alternates-thin-italic {
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 100;
+    font-style: italic;
+  }
+  
+  .montserrat-alternates-extralight-italic {
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 200;
+    font-style: italic;
+  }
+  
+  .montserrat-alternates-light-italic {
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+  }
+  
+  .montserrat-alternates-regular-italic {
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+  
+  .montserrat-alternates-medium-italic {
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+  }
+  
+  .montserrat-alternates-semibold-italic {
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 600;
+    font-style: italic;
+  }
+  
+  .montserrat-alternates-bold-italic {
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+  }
+  
+  .montserrat-alternates-extrabold-italic {
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 800;
+    font-style: italic;
+  }
+  
+  .montserrat-alternates-black-italic {
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 900;
+    font-style: italic;
+  }
+  
+
+.animated img {    
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);    
+	animation: border-transform 10s linear infinite alternate forwards;    
+	border-radius: 100%;
+}
+
+.animated-text{
+	line-height: 1;
+	font-size: "Playwrite CL";
+	background-clip: text;
+	--webkit-baclground-clip: text;
+	color: transparent;
+	background-image: linear-gradient(45deg, rgb(255, 255, 255), rgb(0, 0, 0), rgb(255, 255, 255), rgb(0, 0, 0), rgb(255, 255, 255), rgb(0, 0, 0));
+	background-size: 400% 400%;
+	animation: animate 5s ease infinite;
+}
+@keyframes animate{
+	0%{
+		background-position: 0 0;
+	}
+	25%{
+		background-position: 100% 0;
+	}
+	50%{
+		background-position: 100% 100%;
+	}
+	75%{
+		background-position: 0 100%;
+	}
+	100%{
+		background-position: 0 0;
+	}
+}
+
+.water-text {
+	position: relative;
+	
+  }
+  .water-text h2 {
+	position: absolute;
+	transform: translateX(-50%);
+	left: 50%;
+  }
+  .water-text h2:nth-child(1) {
+	color: transparent;
+	-webkit-text-stroke: 1px rgb(255, 255, 255);
+  }
+  .water-text h2:nth-child(2) {
+	color: rgb(255, 255, 255);
+	animation: anime 4s ease-in-out infinite;
+  }
+  .water-text h1 {
+	position: absolute;
+	transform: translateX(-50%);
+	left: 10%;
+  }
+  .water-text h1:nth-child(1) {
+	color: transparent;
+	-webkit-text-stroke: 1px rgb(0, 0, 0);
+  }
+  .water-text h1:nth-child(2) {
+	color: rgb(0, 0, 0);
+	animation: anime 4s ease-in-out infinite;
+  }
+  @keyframes anime {
+	0%,
+	100% {
+	  clip-path: polygon(
+		0% 45%, 15% 44%, 32% 50%, 54% 60%, 70% 61%, 84% 59%, 100% 52%, 100% 100%, 0% 100%
+	  );
+	}
+	50% {
+	  clip-path: polygon(
+		0% 60%, 16% 65%, 34% 66%, 51% 62%, 67% 50%, 84% 45%, 100% 46%, 100% 100%, 0% 100%
+	  );
+	}
+  }
+  .blur-img {
+	filter: blur(3px);
+  }
+  
+  
+/* Keyframes for the border-radius transformation */
+@keyframes border-transform {    
+	0%, 100% {        
+		border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%;    
+	}    
+	14% {        
+		border-radius: 40% 60% 54% 46% / 49% 60% 40% 51%;    
+	}    
+	28% {        
+		border-radius: 54% 46% 38% 62% / 49% 70% 30% 51%;    
+	}    
+	42% {        
+		border-radius: 61% 39% 55% 45% / 61% 38% 62% 39%;    
+	}    
+	56% {        
+		border-radius: 61% 39% 67% 33% / 70% 50% 50% 30%;    
+	}    
+	70% {        
+		border-radius: 50% 50% 34% 66% / 56% 68% 32% 44%;    
+	}    
+	84% {        
+		border-radius: 46% 54% 50% 50% / 35% 61% 39% 65%;    
+	}
+}
+
+/* Sticky header background color */
+[data-scroll-listener="true"] #sinatra-header-inner {    
+	background: rgba(0, 0, 0, 0.6);
+}
+
+/* styles.css */
+
+.playwrite-cl-title {
+    font-family: "Playwrite CL", cursive;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  .roboto-condensed-heading {
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .playwrite-pe-subtitle {
+    font-family: "Playwrite PE", cursive;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+  }
+  
+  .playwrite-cu-caption {
+    font-family: "Playwrite CU", cursive;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+  }
+  
