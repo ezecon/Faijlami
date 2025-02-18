@@ -27,7 +27,7 @@ export default function Main() {
       // Reset cooldown after 20 seconds
       setTimeout(() => {
         setIsCooldown(false);
-      }, 0); // 20,000 ms = 20 seconds
+      }, 20000); // 20,000 ms = 20 seconds
     }
   };
 

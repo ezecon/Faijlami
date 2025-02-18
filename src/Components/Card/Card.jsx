@@ -2,14 +2,25 @@ import { useEffect, useRef } from "react";
 
 export default function Card({ id, isMoved, handleClick, isCooldown }) {
   const audioRef = useRef(null);
-
+  const timeoutRef = useRef(null);
   useEffect(() => {
     if (isMoved && audioRef.current) {
       audioRef.current.play();
+
+      // Stop the audio after 20 seconds
+      timeoutRef.current = setTimeout(() => {
+        if (audioRef.current) {
+          audioRef.current.pause();
+          audioRef.current.currentTime = 0;
+        }
+      }, 20000);
     } else if (audioRef.current) {
       audioRef.current.pause();
       audioRef.current.currentTime = 0;
+      clearTimeout(timeoutRef.current);
     }
+
+    return () => clearTimeout(timeoutRef.current);
   }, [isMoved]);
 
   const getTranslation = () => {
@@ -47,7 +58,7 @@ export default function Card({ id, isMoved, handleClick, isCooldown }) {
       onClick={() => !isCooldown && handleClick(id)}
     >
       {id!==1 && (<img src={`${id}.jpg`} alt="Photo" className="w-full h-56 object-cover " />)}
-     {id === 1 &&  (<video src="1.mp4"autoPlay loop muted className="w-full h-56 object-cover"/>)}
+     {id === 1 &&  (<video src="1.mp4"autoPlay loop  className="w-full h-56 object-cover"/>)}
       <div className="p-4 bg-[#ffffff18] backdrop-blur-md flex items-center justify-center">
         <p className="playwrite-cu-caption text-center text-gray-800 text-lg font-semibold">
           {getCaption()}
